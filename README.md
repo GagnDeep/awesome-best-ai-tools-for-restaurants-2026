@@ -1,17 +1,17 @@
 ---
 title: "best-ai-tools-for-restaurants-2026"
-description: "Discover the best open source AI tools for restaurants in 2026: GitHub projects for menu OCR, voice ordering, forecasting, chat agents, and personalization."
+description: "Best AI tools for restaurants in 2026: a verified open-source GitHub list for menu OCR, voice ordering, forecasting, personalization, and RAG."
 icon: 📋
 category: artificial-intelligence
 ---
 
-# Best Open Source AI Tools for Restaurants in 2026
+# Best AI Tools for Restaurants in 2026
 
 [![Awesome](https://cdn.jsdelivr.net/gh/sindresorhus/awesome@main/media/badge.svg)](https://github.com/sindresorhus/awesome)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 ![Topics](https://img.shields.io/github/stars/GagnDeep/awesome-best-ai-tools-for-restaurants-2026?style=social)
 
-> This `best-ai-tools-for-restaurants-2026` list curates open source AI projects that restaurant operators, consultants, and builders can actually inspect, self-host, and extend. Because truly restaurant-specific repositories are still limited on GitHub, this list focuses on verified public repos that solve real restaurant workflows such as phone ordering, menu OCR, forecasting, guest support, and personalization.
+> This curated list of the best AI tools for restaurants in 2026 focuses only on open-source projects that exist as public GitHub repositories. It is built for operators, developers, and consultants who need menu OCR, voice ordering, forecasting, personalization, and self-hosted restaurant AI infrastructure without locking themselves into proprietary SaaS.
 
 ## Table of Contents
 - [TL;DR](#tldr)
@@ -22,404 +22,482 @@ category: artificial-intelligence
 - [License](#license)
 
 ## TL;DR
-- `langflow-ai/langflow` is the fastest way to stand up internal restaurant copilots, back-office assistants, and workflow automation with a UI plus API.
-- `PaddlePaddle/PaddleOCR` and `datalab-to/marker` are strong starting points for menu digitization, invoice extraction, and document parsing.
-- `RasaHQ/rasa`, `pipecat-ai/pipecat`, and `livekit/agents` are the strongest open source bases for phone, kiosk, and reservation voice experiences.
-- `Nixtla/statsforecast`, `Nixtla/neuralforecast`, and `unit8co/darts` cover demand forecasting, staffing, and prep planning better than most generic restaurant tools.
-- Recommendation and upsell tooling is the thinnest category on GitHub today, so this repo documents that gap instead of padding the list with weak fits.
+- `PaddleOCR`, `docTR`, `surya`, and `Marker` are the strongest open-source starting points for menu digitization, PDF ingestion, and structured document extraction.
+- `Intervo`, `Asterisk-AI-Voice-Agent`, `Rhasspy`, and `OVOS` are the most practical building blocks for restaurant phone agents, kiosk voice flows, and on-prem voice automation.
+- `NeuralForecast`, `Darts`, `PyTorch Forecasting`, `Prophet`, and `Kats` cover demand forecasting, prep planning, staffing, and anomaly detection for restaurant ops.
+- `RecBole`, `implicit`, `LightFM`, and `LensKit` are strong recommendation stacks for upsells, combos, loyalty offers, and menu personalization.
+- Direct restaurant-native AI repositories are still scarce on GitHub. This list is intentionally broader and prioritizes verified repos that restaurants can actually deploy.
 
 ## Why This List
-Restaurants have strong privacy, integration, and margin constraints, so black-box SaaS is often a poor fit. The best AI tools for restaurants in 2026 are frequently not restaurant-branded products at all, but open source GitHub repositories for OCR, voice, forecasting, orchestration, and recommendation pipelines that can be adapted to reservations, ordering, prep, labor planning, menu engineering, and multilingual guest support.
+Most “best AI tools for restaurants” articles are dominated by closed SaaS products, weak affiliate recommendations, or generic automation tools with no source code. Restaurants often need something different: menu extraction from PDFs and images, multilingual ordering assistance, forecasting for labor and inventory, and recommendation engines that can run on their own stack.
+
+Open-source tools matter here because restaurants and hospitality groups usually care about margins, data ownership, local customization, multilingual support, and the ability to adapt workflows for multiple brands or locations. This list only includes projects that exist as public GitHub repositories and maps them to concrete restaurant use cases.
 
 ## Open Source Tools
 
-### Agent Builders and Internal Ops Assistants
+### Restaurant-Specific AI Apps
+Direct restaurant-native AI repos are still a gap on GitHub. Only a few credible public repositories surfaced in research, so this category is intentionally short.
 
-#### [Flowise](https://github.com/FlowiseAI/Flowise)
-> **Description:** Flowise describes itself as a visual way to build AI agents and workflows, with self-hosting, Docker support, API endpoints, and a node-based editor for chaining models, tools, retrievers, and business logic. For restaurants, that makes it practical for internal assistants around SOP search, franchise support, catering intake, and reservation triage without forcing a proprietary cloud product. On GitHub, Flowise had 47.8k stars, TypeScript as its primary language, an Apache-2.0 license, and was updated on January 13, 2026.
+#### [Oh!Menu / ai-menu-generator](https://github.com/dieharders/ai-menu-generator)
+> **Description:** This project is one of the few clearly restaurant-specific AI repositories. The README describes a workflow where a photo of a restaurant menu becomes an interactive digital menu with images, translations, ingredient detail, allergy context, and a chatbot that behaves like a waiter. It is lightweight and niche, but useful as a reference for accessible digital-menu UX. GitHub metadata available from the cached repo page shows it as a small public JavaScript project with no detected license surfaced in the cache, 4 stars, and a last visible update associated with July 11, 2024.
 
-- **GitHub:** [github.com/FlowiseAI/Flowise](https://github.com/FlowiseAI/Flowise)
-- **Stars:** 47.8k ⭐
-- **Language:** TypeScript
-- **License:** Apache-2.0
-- **Last Commit:** 2026-01-13
-- **Category:** agent-builder, workflow-automation
-- **Best for:** visual restaurant AI workflows and self-hosted internal copilots
-
----
-
-#### [Langflow](https://github.com/langflow-ai/langflow)
-> **Description:** Langflow positions itself as a powerful platform for building and deploying AI-powered agents and workflows with a visual authoring experience, built-in API support, and MCP-friendly tooling. That matters for restaurants that need operations teams to prototype menu Q&A, shift support bots, or multilingual guest agents without writing everything from scratch. Its README emphasizes broad model and vector database support plus deployment flexibility. On GitHub, Langflow had 142.7k stars, Python as its primary language, an MIT license, and was updated on January 3, 2026.
-
-- **GitHub:** [github.com/langflow-ai/langflow](https://github.com/langflow-ai/langflow)
-- **Stars:** 142.7k ⭐
-- **Language:** Python
-- **License:** MIT
-- **Last Commit:** 2026-01-03
-- **Category:** agent-builder, low-code
-- **Best for:** restaurant teams that want a visual UI plus API for AI assistants
-
----
-
-#### [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm)
-> **Description:** AnythingLLM is presented as an all-in-one desktop and Docker AI application with built-in RAG, AI agents, MCP compatibility, and a no-code agent builder. For restaurant use, it fits local knowledge bases such as training manuals, menu specs, allergen docs, HR handbooks, and franchise playbooks, especially when teams want a single self-hosted surface rather than assembling many components. The README focuses on accessibility and deployment flexibility. On GitHub, AnythingLLM had 53.3k stars, JavaScript as its primary language, an MIT license, and was updated on January 14, 2026.
-
-- **GitHub:** [github.com/Mintplex-Labs/anything-llm](https://github.com/Mintplex-Labs/anything-llm)
-- **Stars:** 53.3k ⭐
+- **GitHub:** [github.com/dieharders/ai-menu-generator](https://github.com/dieharders/ai-menu-generator)
+- **Stars:** 4 ⭐
 - **Language:** JavaScript
-- **License:** MIT
-- **Last Commit:** 2026-01-14
-- **Category:** rag, self-hosted
-- **Best for:** restaurant knowledge bases and private internal chat assistants
+- **License:** Not surfaced in cached GitHub UI
+- **Last Commit:** Jul 11, 2024
+- **Category:** restaurant-menu, menu-chat, accessibility
+- **Best for:** turning static menus into conversational digital menus
 
 ---
 
-#### [LlamaIndex](https://github.com/run-llama/llama_index)
-> **Description:** LlamaIndex describes itself as a leading framework for building LLM-powered agents over your data, with tools for composable AI systems that are easy to customize and deploy. In restaurant stacks, this is useful when the hard part is connecting private documents, POS exports, menu metadata, and policy content into a grounded assistant instead of just making a chatbot. The project is heavily used for retrieval-heavy applications. On GitHub, LlamaIndex had 46.2k stars, Python as its primary language, an MIT license, and was updated on January 8, 2026.
+#### [OCR Restaurant Menu Import](https://github.com/theognis1002/ocr-restaurant-menu-import)
+> **Description:** This repo is a small but directly relevant utility for menu ingestion. The README says it extracts text from menu images with `pytesseract`, then uses a language model through `litellm` to enhance the text and emit structured JSON. It supports multiple image formats and multiprocessing, which makes it useful as a menu-import prototype for restaurant POS or ordering systems. GitHub metadata visible from the cached repo page shows 2 stars, Python as the primary language, and an MIT license. GitHub’s cached page did not expose an exact last-commit date in the visible snapshot.
 
-- **GitHub:** [github.com/run-llama/llama_index](https://github.com/run-llama/llama_index)
-- **Stars:** 46.2k ⭐
+- **GitHub:** [github.com/theognis1002/ocr-restaurant-menu-import](https://github.com/theognis1002/ocr-restaurant-menu-import)
+- **Stars:** 2 ⭐
 - **Language:** Python
 - **License:** MIT
-- **Last Commit:** 2026-01-08
-- **Category:** rag, data-agents
-- **Best for:** grounded assistants over menus, policies, invoices, and ops docs
+- **Last Commit:** Not surfaced in cached GitHub UI
+- **Category:** menu-ingestion, ocr, structured-data
+- **Best for:** converting photographed menus into JSON import data
 
 ---
 
-#### [PydanticAI](https://github.com/pydantic/pydantic-ai)
-> **Description:** PydanticAI frames itself as a GenAI agent framework designed to make production-grade applications and workflows easier to build with typed validation and strong developer ergonomics. That is useful in restaurant contexts where AI outputs often need strict schema enforcement for reservations, catering requests, allergy flags, or structured shift notes. The README repeatedly emphasizes confidence and correctness over hacky demos. On GitHub, PydanticAI had 14.2k stars, Python as its primary language, an MIT license, and was updated on January 10, 2026.
-
-- **GitHub:** [github.com/pydantic/pydantic-ai](https://github.com/pydantic/pydantic-ai)
-- **Stars:** 14.2k ⭐
-- **Language:** Python
-- **License:** MIT
-- **Last Commit:** 2026-01-10
-- **Category:** agent-framework, typed-workflows
-- **Best for:** structured restaurant workflows with validated outputs
-
----
-
-#### [CrewAI](https://github.com/crewAIInc/crewAI)
-> **Description:** CrewAI is described as a fast, flexible framework for orchestrating autonomous AI agents that can collaborate on more complex tasks. For restaurants, that can translate into multi-step workflows such as analyzing reviews, summarizing sales anomalies, building prep plans, or routing customer issues between agents with different roles. The README focuses on orchestration, collaboration, and automation rather than just chat. On GitHub, CrewAI had 42.4k stars, Python as its primary language, an MIT license, and was updated on January 7, 2026.
-
-- **GitHub:** [github.com/crewAIInc/crewAI](https://github.com/crewAIInc/crewAI)
-- **Stars:** 42.4k ⭐
-- **Language:** Python
-- **License:** MIT
-- **Last Commit:** 2026-01-07
-- **Category:** multi-agent, orchestration
-- **Best for:** multi-step restaurant automation and agent delegation
-
----
-
-### Voice Ordering and Phone Automation
-
-#### [Rasa](https://github.com/RasaHQ/rasa)
-> **Description:** Rasa remains one of the strongest open source conversational AI frameworks for reliable business workflows, combining NLU, dialogue management, custom actions, and integrations with external systems. For restaurants, that makes it viable for reservation flows, store-hours bots, FAQ automation, or escalation-aware customer support where deterministic paths still matter. Its README stresses scalable AI agents with business logic rather than pure prompt-only behavior. On GitHub, Rasa had 21k stars, Python as its primary language, an Apache-2.0 license, and was updated on December 5, 2025.
-
-- **GitHub:** [github.com/RasaHQ/rasa](https://github.com/RasaHQ/rasa)
-- **Stars:** 21k ⭐
-- **Language:** Python
-- **License:** Apache-2.0
-- **Last Commit:** 2025-12-05
-- **Category:** conversational-ai, customer-support
-- **Best for:** reservation bots and structured restaurant service flows
-
----
-
-#### [Pipecat](https://github.com/pipecat-ai/pipecat)
-> **Description:** Pipecat presents itself as a real-time voice and multimodal AI framework for building streaming conversational agents with pluggable speech, LLM, video, memory, and transport layers. That fits restaurant phone ordering, drive-thru experiments, kiosk voice interfaces, and host-stand assistants that need low-latency conversations instead of turn-based text bots. The README highlights pipeline composition and real-time media handling as the core value. On GitHub, Pipecat had 9.8k stars, Python as its primary language, a BSD-2-Clause license, and was updated on January 5, 2026.
-
-- **GitHub:** [github.com/pipecat-ai/pipecat](https://github.com/pipecat-ai/pipecat)
-- **Stars:** 9.8k ⭐
-- **Language:** Python
-- **License:** BSD-2-Clause
-- **Last Commit:** 2026-01-05
-- **Category:** voice-ai, real-time
-- **Best for:** low-latency phone and kiosk conversations
-
----
-
-#### [LiveKit Agents](https://github.com/livekit/agents)
-> **Description:** LiveKit Agents is a realtime voice AI framework built on top of LiveKit’s open infrastructure, with support for multimodal agents, WebRTC transports, scheduling, and telephony-adjacent use cases. In restaurant operations, it is a strong base for voice concierge systems, booking lines, call-center copilots, or embedded assistants in mobile and kiosk flows. The repository leans heavily into programmable, real-time participants and flexible integrations. On GitHub, LiveKit Agents had 8.9k stars, Python as its primary language, an Apache-2.0 license, and was updated on January 3, 2026.
-
-- **GitHub:** [github.com/livekit/agents](https://github.com/livekit/agents)
-- **Stars:** 8.9k ⭐
-- **Language:** Python
-- **License:** Apache-2.0
-- **Last Commit:** 2026-01-03
-- **Category:** voice-ai, realtime-agents
-- **Best for:** restaurant voice apps that need real-time media infrastructure
-
----
-
-#### [Vocode Core](https://github.com/vocodedev/vocode-core)
-> **Description:** Vocode Core is an open source library for building voice-based LLM apps with integrations for transcription, synthesis, phone calls, Zoom, and streaming conversations. For restaurants, that can support experimental call answering, outbound guest reminders, or AI-assisted call routing where developers want a simpler abstraction layer over voice components. The README highlights modularity and multi-provider support, including open source synthesis options. On GitHub, Vocode Core had 3.6k stars, Python as its primary language, an MIT license, and showed public repository activity dated November 16, 2024.
-
-- **GitHub:** [github.com/vocodedev/vocode-core](https://github.com/vocodedev/vocode-core)
-- **Stars:** 3.6k ⭐
-- **Language:** Python
-- **License:** MIT
-- **Last Commit:** 2024-11-16
-- **Category:** voice-ai, telephony
-- **Best for:** developer-led voice agent prototypes for restaurant calls
-
----
-
-#### [Coqui TTS](https://github.com/coqui-ai/TTS)
-> **Description:** Coqui TTS is a deep learning toolkit for text-to-speech with pretrained models, training utilities, voice conversion, dataset tooling, and multilingual support. In restaurant environments, it is useful when teams need branded speech voices for kiosks, phone systems, or accessibility layers without outsourcing core speech generation. The README emphasizes both research depth and practical production use, including ready-to-run models and Docker-friendly workflows. On GitHub, Coqui TTS had 44k stars, Python as its primary language, an MPL-2.0 license, and was updated on August 16, 2024.
-
-- **GitHub:** [github.com/coqui-ai/TTS](https://github.com/coqui-ai/TTS)
-- **Stars:** 44k ⭐
-- **Language:** Python
-- **License:** MPL-2.0
-- **Last Commit:** 2024-08-16
-- **Category:** speech, text-to-speech
-- **Best for:** branded restaurant voice output and kiosk speech synthesis
-
----
-
-### Menu, Document, and Receipt Extraction
+### Menu OCR and Document Intelligence
 
 #### [PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)
-> **Description:** PaddleOCR is positioned as a powerful, lightweight OCR toolkit that turns PDF and image documents into structured data and supports more than 100 languages. For restaurants, it is one of the clearest fits in this list because it can power menu digitization, invoice capture, multilingual paper form extraction, and document parsing pipelines for ops and procurement. The project also ships broader document intelligence features beyond plain OCR. On GitHub, PaddleOCR had 64k stars, Python as its primary language, an Apache-2.0 license, and its latest public release activity was dated November 13, 2025.
+> **Description:** PaddleOCR is one of the strongest open-source document stacks for restaurants that need to ingest scanned menus, supplier PDFs, receipts, or multilingual printed materials. Its README emphasizes structured extraction from PDFs and images into AI-friendly formats like JSON and Markdown, with support for more than 100 languages. That makes it practical for digitizing menus, nutrition sheets, and back-office documents across multiple markets. GitHub metadata in the cached search results shows about 64k stars, Python as the primary language, Apache-2.0 licensing, and a latest visible update in early 2026.
 
 - **GitHub:** [github.com/PaddlePaddle/PaddleOCR](https://github.com/PaddlePaddle/PaddleOCR)
 - **Stars:** 64k ⭐
 - **Language:** Python
 - **License:** Apache-2.0
-- **Last Commit:** 2025-11-13
-- **Category:** ocr, document-ai
-- **Best for:** menu OCR, invoice extraction, and multilingual paper workflows
+- **Last Commit:** Jan 2026 visibility in cached GitHub results
+- **Category:** ocr, multilingual, document-parsing
+- **Best for:** high-scale menu OCR and multilingual document parsing
 
 ---
 
-#### [Unstructured](https://github.com/Unstructured-IO/unstructured)
-> **Description:** Unstructured is an open source ETL tool for transforming complex documents into cleaner structured formats for language models. Restaurant teams can use it to normalize SOP documents, vendor PDFs, contracts, menu files, onboarding packets, and franchise manuals before feeding them into search, analytics, or assistant workflows. The README stresses partitioning, cleaning, chunking, and transformation across many file types, which is exactly what operational document stacks need. On GitHub, Unstructured had 13.5k stars, HTML as its primary language, an Apache-2.0 license, and was updated on December 30, 2025.
+#### [docTR](https://github.com/mindee/doctr)
+> **Description:** docTR focuses on end-to-end OCR with detection plus recognition, and its README keeps the integration story straightforward: load PDFs or images, run a pretrained OCR predictor, and parse text regions in a consistent structure. Restaurants can use it for menu scans, invoices, or franchise docs when they want a pure Python deep-learning workflow rather than a full end-user product. Cached GitHub metadata shows roughly 5.7k stars, Python as the dominant language, Apache-2.0 licensing, and recent activity continuing into 2025.
 
-- **GitHub:** [github.com/Unstructured-IO/unstructured](https://github.com/Unstructured-IO/unstructured)
-- **Stars:** 13.5k ⭐
-- **Language:** HTML
-- **License:** Apache-2.0
-- **Last Commit:** 2025-12-30
-- **Category:** document-etl, rag-prep
-- **Best for:** cleaning restaurant documents before search or assistant indexing
-
----
-
-#### [Marker](https://github.com/datalab-to/marker)
-> **Description:** Marker focuses on converting PDFs to Markdown and JSON quickly with high accuracy, which is particularly useful when restaurant operators want menus, recipe binders, onboarding packs, or procurement packets in machine-friendly formats instead of raw OCR text. The project’s README and releases emphasize layout quality, table handling, and integration with document intelligence pipelines. It is especially handy when downstream AI systems expect structured Markdown. On GitHub, Marker had 30.9k stars, Python as its primary language, a GPL-3.0 license, and was updated on January 7, 2026.
-
-- **GitHub:** [github.com/datalab-to/marker](https://github.com/datalab-to/marker)
-- **Stars:** 30.9k ⭐
+- **GitHub:** [github.com/mindee/doctr](https://github.com/mindee/doctr)
+- **Stars:** 5.7k ⭐
 - **Language:** Python
-- **License:** GPL-3.0
-- **Last Commit:** 2026-01-07
-- **Category:** pdf-to-markdown, extraction
-- **Best for:** converting menus and ops PDFs into LLM-friendly Markdown
+- **License:** Apache-2.0
+- **Last Commit:** Jul 9, 2025
+- **Category:** ocr, pdf, pytorch
+- **Best for:** Python-first OCR pipelines for menu and invoice extraction
 
 ---
 
-#### [Surya](https://github.com/datalab-to/surya)
-> **Description:** Surya is a document OCR toolkit covering OCR, layout analysis, reading order, table recognition, and LaTeX OCR across 90+ languages. That breadth makes it useful for restaurants that deal with multilingual menus, scanned vendor forms, handwritten-heavy document sets, or table-rich paperwork that basic OCR tools often flatten badly. The README is explicit that it is document-focused rather than general photo OCR, which is a good fit for operations and back-office use. On GitHub, Surya had 19.1k stars, Python as its primary language, a GPL-3.0 license, and was updated on October 21, 2025.
+#### [surya](https://github.com/datalab-to/surya)
+> **Description:** Surya is positioned in its README as an OCR and layout-analysis engine with reading-order and table recognition across 90+ languages. That combination is especially useful for restaurant menus, where multi-column layouts, nested sections, and tabular price structures often break weaker OCR stacks. It is less of an end-user app and more of a document intelligence core for custom ingestion pipelines. Cached GitHub metadata from the Datalab organization page shows around 19.1k stars, Python as the primary language, and active maintenance through 2025.
 
 - **GitHub:** [github.com/datalab-to/surya](https://github.com/datalab-to/surya)
 - **Stars:** 19.1k ⭐
 - **Language:** Python
 - **License:** GPL-3.0
-- **Last Commit:** 2025-10-21
-- **Category:** ocr, layout-analysis
-- **Best for:** complex multilingual menu and form extraction
+- **Last Commit:** 2025 activity visible in cached GitHub org results
+- **Category:** ocr, layout-analysis, multilingual
+- **Best for:** complex menu layouts and multilingual OCR
 
 ---
 
-#### [Chandra](https://github.com/datalab-to/chandra)
-> **Description:** Chandra is aimed at OCR for complex tables, forms, handwriting, and full-layout understanding. While not restaurant-specific, that matters for kitchens and multi-unit operators handling handwritten receiving logs, purchase records, inspection sheets, and structured vendor paperwork that ordinary OCR misses. The repository is narrower than generic OCR suites, but stronger when table and form quality matter. On GitHub, Chandra had 4.4k stars, Python as its primary language, an Apache-2.0 license, and was updated on January 13, 2026.
+#### [Marker](https://github.com/datalab-to/marker)
+> **Description:** Marker converts documents to Markdown, JSON, chunks, and HTML with support for PDFs, images, DOCX, XLSX, PPTX, EPUB, and HTML. Its README stresses structured extraction, image handling, artifact removal, and optional LLM-assisted accuracy boosts. For restaurant teams, that is valuable when menus, SOPs, vendor catalogs, and training binders live in multiple document formats. Cached GitHub metadata shows 30.7k stars, Python as the primary language, GPL-3.0 licensing, and strong activity through 2025.
 
-- **GitHub:** [github.com/datalab-to/chandra](https://github.com/datalab-to/chandra)
-- **Stars:** 4.4k ⭐
+- **GitHub:** [github.com/datalab-to/marker](https://github.com/datalab-to/marker)
+- **Stars:** 30.7k ⭐
+- **Language:** Python
+- **License:** GPL-3.0
+- **Last Commit:** 2025 activity visible in cached GitHub results
+- **Category:** pdf-to-markdown, structured-extraction, document-ai
+- **Best for:** converting restaurant docs into clean Markdown and JSON
+
+---
+
+#### [OpenOCR](https://github.com/Topdu/OpenOCR)
+> **Description:** OpenOCR is more research-heavy than turnkey, but it is unusually broad. The README covers text detection, text recognition, formula and table recognition, and document parsing, with benchmark-driven implementations tied to recent academic work. Restaurants probably will not deploy it directly for front-of-house workflows, but engineering teams can use it as a strong OCR foundation when they need open models and reproducible training for menu or invoice extraction. Cached GitHub metadata shows 984 stars, Python as the primary language, Apache-2.0 licensing, and public releases through late 2024 with continuing updates into 2026 noted in the README.
+
+- **GitHub:** [github.com/Topdu/OpenOCR](https://github.com/Topdu/OpenOCR)
+- **Stars:** 984 ⭐
 - **Language:** Python
 - **License:** Apache-2.0
-- **Last Commit:** 2026-01-13
-- **Category:** forms, handwriting-ocr
-- **Best for:** restaurant back-office forms and handwritten operational records
+- **Last Commit:** Jan 7, 2026 updates noted in README
+- **Category:** ocr, document-analysis, research
+- **Best for:** teams that need a customizable OCR research stack
 
 ---
 
-### Demand Forecasting and Restaurant Analytics
+#### [MinerU](https://github.com/opendatalab/MinerU)
+> **Description:** MinerU is designed to turn complex PDFs into machine-readable Markdown or JSON and its README highlights removal of headers and footers, reading-order recovery, table and image extraction, and formula conversion. That makes it a strong back-office tool when restaurant groups have franchise manuals, vendor documents, marketing PDFs, or spec sheets that need to become LLM-ready knowledge assets. Cached GitHub metadata shows 51.8k stars, Python as the primary language, an active release stream into January 2026, and heavy usage in document-AI workflows.
 
-#### [Darts](https://github.com/unit8co/darts)
-> **Description:** Darts is a user-friendly forecasting and anomaly detection library that exposes a consistent `fit()` and `predict()` workflow across classic and deep learning models. For restaurants, that is useful for covers forecasting, labor planning, prep volume, waste tracking, and anomaly detection in daily sales or channel mix. The README emphasizes multivariate support, backtesting, ensembles, and exogenous variables, which map well to weather, events, and promotions. On GitHub, Darts had 9.1k stars, Python as its primary language, an Apache-2.0 license, and public repository activity was current in early 2026.
+- **GitHub:** [github.com/opendatalab/MinerU](https://github.com/opendatalab/MinerU)
+- **Stars:** 51.8k ⭐
+- **Language:** Python
+- **License:** Open-source license not surfaced in cached GitHub snippet
+- **Last Commit:** Jan 6, 2026
+- **Category:** pdf-parsing, markdown, rag-prep
+- **Best for:** converting restaurant PDF knowledge into LLM-ready data
 
-- **GitHub:** [github.com/unit8co/darts](https://github.com/unit8co/darts)
-- **Stars:** 9.1k ⭐
+---
+
+### Voice Ordering and Call Automation
+
+#### [Intervo](https://github.com/Intervo/Intervo)
+> **Description:** Intervo is an open-source conversational platform for voice and chat agents. The README emphasizes multimodal agents, a workflow canvas, RAG knowledge bases, telephony, speech-provider choice, and embeddable web chat. For restaurants, that maps well to phone ordering, reservation intake, FAQ handling, or multilingual guest support where a hosted call-center SaaS is too rigid. Cached GitHub metadata shows 353 stars, JavaScript as the primary language, MIT licensing, and a last visible GitHub update on July 11, 2025.
+
+- **GitHub:** [github.com/Intervo/Intervo](https://github.com/Intervo/Intervo)
+- **Stars:** 353 ⭐
+- **Language:** JavaScript
+- **License:** MIT
+- **Last Commit:** Jul 11, 2025
+- **Category:** voice-ai, chat-agents, rag
+- **Best for:** self-hosted restaurant phone and chat agents
+
+---
+
+#### [Asterisk-AI-Voice-Agent](https://github.com/hkjarral/Asterisk-AI-Voice-Agent)
+> **Description:** This is one of the most directly deployable open-source voice-agent repos for restaurant phone systems. Its README centers on Asterisk and FreePBX integration, modular STT/LLM/TTS pipelines, production-ready baselines, tool calling, and local-LLM options for privacy-first setups. Restaurants running their own telephony stack can use it for inbound ordering, transfer logic, after-hours answering, or scripted upsell prompts. Cached GitHub metadata shows 678 stars, an MIT license, and current positioning as a production-focused AI voice agent.
+
+- **GitHub:** [github.com/hkjarral/Asterisk-AI-Voice-Agent](https://github.com/hkjarral/Asterisk-AI-Voice-Agent)
+- **Stars:** 678 ⭐
+- **Language:** Python
+- **License:** MIT
+- **Last Commit:** 2025 activity visible in cached GitHub results
+- **Category:** telephony, asterisk, voice-agent
+- **Best for:** AI phone ordering on Asterisk or FreePBX
+
+---
+
+#### [Rhasspy](https://github.com/rhasspy/rhasspy)
+> **Description:** Rhasspy is an offline private voice assistant framework built around intents and local processing. The README emphasizes language support, offline operation, JSON event output, and compatibility with automation systems. That makes it attractive for privacy-sensitive restaurant environments such as kiosk voice controls, staff hands-free workflows, or simple counter-order intent handling where cloud speech is undesirable. Cached GitHub metadata shows about 2.7k stars, Shell as the primary language in the archived repo snapshot, and sustained community interest even as the broader ecosystem evolved.
+
+- **GitHub:** [github.com/rhasspy/rhasspy](https://github.com/rhasspy/rhasspy)
+- **Stars:** 2.7k ⭐
+- **Language:** Shell
+- **License:** MIT
+- **Last Commit:** 2025 cached GitHub activity snapshot
+- **Category:** offline-voice, intents, privacy
+- **Best for:** on-prem voice interfaces and kiosk intent capture
+
+---
+
+#### [OVOS Core](https://github.com/OpenVoiceOS/ovos-core)
+> **Description:** OVOS Core is the main runtime behind OpenVoiceOS, an open-source voice platform for smart-speaker and voice-device workflows. Its README positions it as the central component for building voice-centric experiences, with install options for standalone development, Raspberry Pi deployments, and skill-based extension. Restaurants can use it as the basis for kitchen assistants, kiosk prompts, or branded hospitality voice devices. Cached GitHub metadata shows 252 stars, Python as the primary language for the repo, Apache-2.0 licensing, and active public maintenance.
+
+- **GitHub:** [github.com/OpenVoiceOS/ovos-core](https://github.com/OpenVoiceOS/ovos-core)
+- **Stars:** 252 ⭐
 - **Language:** Python
 - **License:** Apache-2.0
-- **Last Commit:** 2026-01-01
-- **Category:** forecasting, anomaly-detection
-- **Best for:** forecasting covers, sales, and labor with one API
+- **Last Commit:** 2025 cached GitHub activity snapshot
+- **Category:** voice-platform, assistant-core, self-hosted
+- **Best for:** custom branded restaurant voice assistants
 
 ---
 
-#### [PyCaret](https://github.com/pycaret/pycaret)
-> **Description:** PyCaret is an open source low-code machine learning library that automates end-to-end workflows and includes time-series support alongside classification, regression, and anomaly tools. In a restaurant context, it is useful for teams that want faster experiments on demand, staffing, churn, or review classification without hand-writing extensive model code. The README stresses productivity, simple APIs, and broad library integration. On GitHub, PyCaret had 9.6k stars, Jupyter Notebook as its primary language, an MIT license, and was updated on April 21, 2025.
+#### [WhisperSpeech](https://github.com/WhisperSpeech/WhisperSpeech)
+> **Description:** WhisperSpeech is an open-source text-to-speech system built by “inverting” Whisper. The README highlights commercially safe code and models trained on properly licensed data, with a goal of giving developers a hackable speech stack similar to what Stable Diffusion did for image generation. Restaurants can use it for kiosk prompts, drive-thru prototypes, or multilingual voice UI layers where control over the TTS engine matters. Cached GitHub metadata shows 4,532 stars, Jupyter Notebook as the primary language on GitHub, MIT licensing, and an updated snapshot from June 8, 2025.
 
-- **GitHub:** [github.com/pycaret/pycaret](https://github.com/pycaret/pycaret)
-- **Stars:** 9.6k ⭐
+- **GitHub:** [github.com/WhisperSpeech/WhisperSpeech](https://github.com/WhisperSpeech/WhisperSpeech)
+- **Stars:** 4,532 ⭐
 - **Language:** Jupyter Notebook
 - **License:** MIT
-- **Last Commit:** 2025-04-21
-- **Category:** automl, time-series
-- **Best for:** low-code restaurant forecasting and operational experiments
+- **Last Commit:** Jun 8, 2025
+- **Category:** tts, speech, audio-generation
+- **Best for:** custom restaurant TTS prompts and voice UI playback
 
 ---
 
-#### [StatsForecast](https://github.com/Nixtla/statsforecast)
-> **Description:** StatsForecast focuses on extremely fast statistical and econometric forecasting models and is built for production-scale time series. Restaurants with many stores, channels, SKUs, or hourly demand curves can use it for large-scale volume forecasting where speed and repeatability matter more than flashy interfaces. The README highlights automatic ARIMA, ETS, benchmark models, probabilistic forecasting, and compatibility with distributed systems. On GitHub, StatsForecast had 4.7k stars, Python as its primary language, an Apache-2.0 license, and was updated on January 14, 2026.
+#### [Handy](https://github.com/cjpais/Handy)
+> **Description:** Handy is a polished offline speech-to-text app rather than a restaurant product, but the fit is clear for staff note capture, manager dictation, and voice-first back-office workflows. The README emphasizes full offline operation, extensibility, and a desktop-grade experience built with Whisper-related tooling, Tauri, and VAD. For hospitality operators that want local transcription instead of sending every utterance to a cloud provider, it is practical and mature. Cached GitHub metadata shows 9.9k stars, TypeScript as the primary language, MIT licensing, and releases into late 2025.
 
-- **GitHub:** [github.com/Nixtla/statsforecast](https://github.com/Nixtla/statsforecast)
-- **Stars:** 4.7k ⭐
-- **Language:** Python
+- **GitHub:** [github.com/cjpais/Handy](https://github.com/cjpais/Handy)
+- **Stars:** 9.9k ⭐
+- **Language:** TypeScript
+- **License:** MIT
+- **Last Commit:** Dec 23, 2025
+- **Category:** speech-to-text, offline, desktop
+- **Best for:** local transcription for restaurant ops and admin workflows
+
+---
+
+#### [openWakeWord](https://github.com/dscripka/openWakeWord)
+> **Description:** openWakeWord is a lightweight framework for wake-word detection and ships with pre-trained models plus a workflow for training custom phrases. The README emphasizes real-world performance, low manual data collection, and support for custom models. Restaurants can use it to trigger kiosk flows, kitchen assistants, or staff terminals with branded phrases such as “Hey Kitchen” or “Start Order.” Cached GitHub metadata shows about 1.7k stars, Jupyter Notebook as the primary language, Apache-2.0 licensing, and strong documentation around deployment tradeoffs.
+
+- **GitHub:** [github.com/dscripka/openWakeWord](https://github.com/dscripka/openWakeWord)
+- **Stars:** 1.7k ⭐
+- **Language:** Jupyter Notebook
 - **License:** Apache-2.0
-- **Last Commit:** 2026-01-14
-- **Category:** statistical-forecasting, operations
-- **Best for:** large multi-store demand and prep forecasting
+- **Last Commit:** 2025 cached GitHub activity snapshot
+- **Category:** wake-word, audio, edge-ai
+- **Best for:** wake-word triggers on kiosks and restaurant voice devices
 
 ---
+
+### Demand Forecasting, Inventory, and Labor Planning
 
 #### [NeuralForecast](https://github.com/Nixtla/neuralforecast)
-> **Description:** NeuralForecast packages a large collection of neural forecasting models, from recurrent architectures to transformers, with a consistent interface and support for exogenous variables and probabilistic outputs. That is relevant for restaurants with richer signals such as weather, events, digital campaigns, and promotions influencing demand. The repository aims to balance usability with state-of-the-art modeling rather than just shipping one narrow method. On GitHub, NeuralForecast had 3.9k stars, Python as its primary language, an Apache-2.0 license, and was updated on January 14, 2026.
+> **Description:** NeuralForecast collects modern neural forecasting models behind a relatively approachable interface and explicitly targets real-world production use. The README highlights transformers, exogenous variables, probabilistic forecasting, interpretability support, and sklearn-style usage. Restaurants can map that to hourly sales forecasting, daypart demand, prep planning, staffing, and ingredient forecasting across stores. Cached GitHub metadata shows 3.9k stars, Python as the primary language, Apache-2.0 licensing, and an updated release track through October 2025.
 
 - **GitHub:** [github.com/Nixtla/neuralforecast](https://github.com/Nixtla/neuralforecast)
 - **Stars:** 3.9k ⭐
 - **Language:** Python
 - **License:** Apache-2.0
-- **Last Commit:** 2026-01-14
-- **Category:** neural-forecasting, deep-learning
-- **Best for:** richer demand models with promotions, weather, and events
+- **Last Commit:** Oct 1, 2025
+- **Category:** forecasting, time-series, deep-learning
+- **Best for:** multi-store restaurant demand forecasting
 
 ---
 
 #### [MLForecast](https://github.com/Nixtla/mlforecast)
-> **Description:** MLForecast is designed for scalable machine-learning-based time series forecasting, especially where feature engineering and classic ML models outperform heavier deep learning stacks. For restaurants, that can be a strong fit for demand prediction, staffing estimates, and item-level prep models built from calendar, seasonality, local events, and weather signals. The project README emphasizes scaling to large datasets and remote clusters with a familiar workflow. On GitHub, MLForecast had 1.1k stars, Python as its primary language, an Apache-2.0 license, and was updated on January 12, 2026.
+> **Description:** MLForecast is aimed at scalable machine-learning forecasting rather than purely deep models. The README stresses fast feature engineering, compatibility with pandas, polars, Spark, Dask, and Ray, plus conformal prediction and support for millions of series. For restaurant groups with many stores and SKUs, that makes it useful for inventory and labor models that need to run in production rather than only in notebooks. Cached GitHub metadata shows 1.1k stars, Python as the primary language, Apache-2.0 licensing, and active development across 2025.
 
 - **GitHub:** [github.com/Nixtla/mlforecast](https://github.com/Nixtla/mlforecast)
 - **Stars:** 1.1k ⭐
 - **Language:** Python
 - **License:** Apache-2.0
-- **Last Commit:** 2026-01-12
-- **Category:** machine-learning, forecasting
-- **Best for:** feature-driven restaurant demand and staffing models
+- **Last Commit:** 2025 cached GitHub activity snapshot
+- **Category:** forecasting, feature-engineering, scale
+- **Best for:** scalable restaurant sales and inventory forecasting
 
 ---
 
-### Personalization and Menu Recommendations
+#### [Darts](https://github.com/unit8co/darts)
+> **Description:** Darts focuses on ease of use without limiting model variety. Its README covers classical forecasting models, deep neural networks, anomaly detection, backtesting, multivariate series, probabilistic output, and external covariates behind a uniform `fit()` and `predict()` pattern. Restaurants can use it to compare forecasting approaches for labor, sales, and food-prep models quickly. Cached GitHub metadata shows about 9.1k stars, Python as the primary language, and continuing maintenance through 2025.
 
-Restaurant-specific recommendation repos are still a real gap on GitHub. This category includes strong open source recommendation libraries that can be adapted for upsells, menu personalization, loyalty offers, and next-best-action logic, but it currently has fewer than 5 clearly maintained fits.
+- **GitHub:** [github.com/unit8co/darts](https://github.com/unit8co/darts)
+- **Stars:** 9.1k ⭐
+- **Language:** Python
+- **License:** Apache-2.0
+- **Last Commit:** 2025 cached GitHub activity snapshot
+- **Category:** forecasting, anomaly-detection, time-series
+- **Best for:** experimenting across restaurant forecasting models fast
 
-#### [Recommenders](https://github.com/recommenders-team/recommenders)
-> **Description:** Recommenders is a best-practices repository for building recommendation systems, organized around data prep, modeling, evaluation, and deployment patterns. For restaurant builders, it is useful as a practical starting point for meal pairing, basket expansion, loyalty personalization, or campaign targeting when the goal is to prototype quickly from notebooks and known patterns. The README explicitly positions the project as a bridge from experimentation to production. On GitHub, Recommenders had 21.2k stars, Python as its primary language, an MIT license, and was updated on November 10, 2025.
+---
 
-- **GitHub:** [github.com/recommenders-team/recommenders](https://github.com/recommenders-team/recommenders)
-- **Stars:** 21.2k ⭐
+#### [PyTorch Forecasting](https://github.com/sktime/pytorch-forecasting)
+> **Description:** PyTorch Forecasting provides a high-level API for state-of-the-art time-series models with deep-learning architectures suited to production. The README calls out dataset handling, logging, visualization, interpretation, multi-horizon metrics, and Optuna-based tuning. For restaurant operators or data teams, it is useful when they want interpretable deep forecasting for hourly demand or staffing requirements without building the whole modeling stack from scratch. Cached GitHub metadata shows 4.7k stars, Python as the primary language, MIT licensing, and releases into October 2025.
+
+- **GitHub:** [github.com/sktime/pytorch-forecasting](https://github.com/sktime/pytorch-forecasting)
+- **Stars:** 4.7k ⭐
 - **Language:** Python
 - **License:** MIT
-- **Last Commit:** 2025-11-10
-- **Category:** recommendation-systems, notebooks
-- **Best for:** menu upsell and loyalty recommendation prototypes
+- **Last Commit:** Oct 10, 2025
+- **Category:** pytorch, forecasting, multi-horizon
+- **Best for:** interpretable deep forecasting for restaurant demand
 
 ---
 
+#### [Prophet](https://github.com/facebook/prophet)
+> **Description:** Prophet remains a practical baseline for business forecasting. The README emphasizes additive models with daily, weekly, and yearly seasonality, holiday effects, robustness to missing data, and resilience to trend shifts and outliers. That fits restaurant sales forecasting well, especially for groups that need a transparent baseline before moving to neural models. Cached GitHub metadata shows the project as MIT licensed and still widely used, with Python and R tooling for quick adoption.
+
+- **GitHub:** [github.com/facebook/prophet](https://github.com/facebook/prophet)
+- **Stars:** 19k+ ⭐
+- **Language:** Python
+- **License:** MIT
+- **Last Commit:** 2025 cached GitHub activity snapshot
+- **Category:** forecasting, seasonality, business-analytics
+- **Best for:** baseline restaurant forecasting with holidays and seasonality
+
+---
+
+#### [Kats](https://github.com/facebookresearch/Kats)
+> **Description:** Kats is broader than forecasting alone. The README frames it as a toolkit for time-series analysis including statistics, anomaly detection, change-point detection, feature extraction, and forecasting. Restaurants can use it not just for demand estimates but also for spotting sudden order-volume shifts, operational regressions, or unusual store-level trends. Cached GitHub metadata shows 6.2k stars, Python as the primary language, MIT licensing, and strong documentation around common industry time-series tasks.
+
+- **GitHub:** [github.com/facebookresearch/Kats](https://github.com/facebookresearch/Kats)
+- **Stars:** 6.2k ⭐
+- **Language:** Python
+- **License:** MIT
+- **Last Commit:** 2025 cached GitHub activity snapshot
+- **Category:** forecasting, anomaly-detection, change-points
+- **Best for:** store-level anomaly detection and forecasting together
+
+---
+
+### Recommendation and Personalization
+
 #### [RecBole](https://github.com/RUCAIBox/RecBole)
-> **Description:** RecBole is a comprehensive recommendation library built on Python and PyTorch, covering general, sequential, context-aware, and knowledge-based recommenders with a unified interface. Restaurants can use it to experiment with basket recommendations, time-aware reorder models, and personalized menu ranking without implementing core algorithms from scratch. The README highlights model breadth, benchmark datasets, GPU acceleration, and standardized evaluation, which makes it especially useful for serious experimentation. On GitHub, RecBole had 4.2k stars, Python as its primary language, an MIT license, and was updated on February 24, 2025.
+> **Description:** RecBole is a comprehensive recommendation library with a large model catalog and standardized evaluation workflows. The README highlights 94 recommendation algorithms, multiple recommendation families, unified data formats, benchmark datasets, and GPU optimization. For restaurants, that can support upsell engines, combo recommendations, dish ranking, or loyalty personalization where experimentation across models matters. Cached GitHub metadata shows 4.2k stars, Python as the primary language, MIT licensing, and an actively maintained release stream through February 2025.
 
 - **GitHub:** [github.com/RUCAIBox/RecBole](https://github.com/RUCAIBox/RecBole)
 - **Stars:** 4.2k ⭐
 - **Language:** Python
 - **License:** MIT
-- **Last Commit:** 2025-02-24
-- **Category:** recommender-library, pytorch
-- **Best for:** sequential and context-aware menu recommendation experiments
+- **Last Commit:** Feb 23, 2025
+- **Category:** recommender-systems, benchmarking, pytorch
+- **Best for:** advanced restaurant recommendation experimentation
 
 ---
 
-#### [TensorFlow Recommenders](https://github.com/tensorflow/recommenders)
-> **Description:** TensorFlow Recommenders is a Keras-friendly library for full recommender workflows, covering data preparation, model formulation, training, evaluation, and deployment. For restaurant teams already using TensorFlow infrastructure, it provides a clean path to personalized offers, combo suggestions, and next-best-item systems without stitching together many separate libraries. The README is concise but clear about production-oriented recommender modeling. On GitHub, TensorFlow Recommenders had 2k stars, Python as its primary language, an Apache-2.0 license, and was updated on January 9, 2026.
-
-- **GitHub:** [github.com/tensorflow/recommenders](https://github.com/tensorflow/recommenders)
-- **Stars:** 2k ⭐
-- **Language:** Python
-- **License:** Apache-2.0
-- **Last Commit:** 2026-01-09
-- **Category:** recommender-library, tensorflow
-- **Best for:** teams already using TensorFlow for restaurant personalization
-
----
-
-#### [Implicit](https://github.com/benfred/implicit)
-> **Description:** Implicit provides fast collaborative filtering implementations for implicit-feedback data, including ALS, BPR, logistic matrix factorization, nearest-neighbor models, and GPU support. That makes it relevant for restaurant ordering histories, browse behavior, add-on clicks, and loyalty signals where explicit ratings usually do not exist. The README focuses on performance, sparse data, and practical recommendation pipelines rather than academic abstraction. On GitHub, Implicit had 3.7k stars, Python as its primary language, an MIT license, and its latest visible GitHub release activity was dated September 29, 2023.
+#### [implicit](https://github.com/benfred/implicit)
+> **Description:** implicit is focused on collaborative filtering for implicit-feedback data, which is a natural match for restaurant ordering behavior where clicks, views, repeat orders, and add-ons are more common than explicit ratings. The README covers ALS, BPR, logistic matrix factorization, nearest-neighbor models, CPU parallelism, GPU support, and ANN acceleration. That makes it highly practical for “customers also ordered” or repeat-order ranking. Cached GitHub metadata shows strong community adoption, MIT licensing, and Python as the primary language.
 
 - **GitHub:** [github.com/benfred/implicit](https://github.com/benfred/implicit)
-- **Stars:** 3.7k ⭐
+- **Stars:** 3k+ ⭐
 - **Language:** Python
 - **License:** MIT
-- **Last Commit:** 2023-09-29
-- **Category:** collaborative-filtering, implicit-feedback
-- **Best for:** order-history recommendations and add-on ranking
+- **Last Commit:** 2025 cached GitHub activity snapshot
+- **Category:** collaborative-filtering, implicit-feedback, recommendations
+- **Best for:** reorder suggestions and item-to-item upsells
+
+---
+
+#### [LightFM](https://github.com/lyst/lightfm)
+> **Description:** LightFM blends collaborative filtering with item and user metadata, and its README explains why that matters: it can generalize to new users and new items by using feature representations. Restaurants can use it to recommend dishes based on cuisine type, dietary tags, time of day, or store context even when explicit user history is sparse. Cached GitHub metadata shows 5k stars, Python as the primary language, Apache-2.0 licensing, and continued public availability as a trusted hybrid recommendation baseline.
+
+- **GitHub:** [github.com/lyst/lightfm](https://github.com/lyst/lightfm)
+- **Stars:** 5k ⭐
+- **Language:** Python
+- **License:** Apache-2.0
+- **Last Commit:** 2025 cached GitHub activity snapshot
+- **Category:** hybrid-recommendation, metadata, ranking
+- **Best for:** cold-start menu recommendations
+
+---
+
+#### [Surprise](https://github.com/NicolasHug/Surprise)
+> **Description:** Surprise is a classic recommender toolkit for explicit rating data. The README emphasizes experiment control, built-in datasets, multiple prediction algorithms, similarity measures, and evaluation tooling that feels familiar to scikit-learn users. Restaurants will most often prefer implicit-feedback stacks, but Surprise is still useful for projects with survey scores, favorite-item ratings, or internal tasting/ranking workflows. Cached GitHub metadata shows BSD-3-Clause licensing and a mature Python-based codebase with wide educational adoption.
+
+- **GitHub:** [github.com/NicolasHug/Surprise](https://github.com/NicolasHug/Surprise)
+- **Stars:** 8k+ ⭐
+- **Language:** Python
+- **License:** BSD-3-Clause
+- **Last Commit:** 2025 cached GitHub activity snapshot
+- **Category:** recommender-systems, explicit-ratings, experimentation
+- **Best for:** ratings-based menu and loyalty recommendation tests
+
+---
+
+#### [LensKit for Python](https://github.com/lenskit/lkpy)
+> **Description:** LensKit is a flexible Python toolkit for recommender-system experimentation and evaluation. Its README positions it as a research-and-education friendly successor to the Java LensKit project, with support for training, running, and measuring recommender algorithms in a modular workflow. Restaurants can use it for rapid experimentation around bundle recommendations, reorder logic, or loyalty personalization pipelines. Cached GitHub metadata shows 300 stars, Python as the primary language, MIT licensing, and an updated public repo listing through November 25, 2025.
+
+- **GitHub:** [github.com/lenskit/lkpy](https://github.com/lenskit/lkpy)
+- **Stars:** 300 ⭐
+- **Language:** Python
+- **License:** MIT
+- **Last Commit:** Nov 25, 2025
+- **Category:** recommender-systems, evaluation, research
+- **Best for:** recommendation experiments and offline evaluation
+
+---
+
+### Review Intelligence, Search, and Knowledge Assistants
+
+#### [Qdrant](https://github.com/qdrant/qdrant)
+> **Description:** Qdrant is a production-ready vector database and similarity engine for search, matching, and recommendation tasks. The README explicitly mentions embeddings-backed search and recommendation use cases, which makes it directly relevant to restaurant review intelligence, semantic menu search, FAQ retrieval, and customer-support assistants. It is infrastructure rather than an app, but it is one of the best open-source foundations for restaurant AI retrieval layers. Cached GitHub metadata shows 28.7k stars, Rust as the primary language, Apache-2.0 licensing, and a last visible update on February 8, 2026.
+
+- **GitHub:** [github.com/qdrant/qdrant](https://github.com/qdrant/qdrant)
+- **Stars:** 28.7k ⭐
+- **Language:** Rust
+- **License:** Apache-2.0
+- **Last Commit:** Feb 8, 2026
+- **Category:** vector-database, semantic-search, recommendations
+- **Best for:** restaurant review search and RAG retrieval backends
+
+---
+
+#### [Haystack](https://github.com/deepset-ai/haystack)
+> **Description:** Haystack is an orchestration framework for RAG, question answering, document search, and agentic applications. Its README emphasizes pipelines, retrievers, file converters, vector-store integration, and production-ready composition rather than a single monolithic chat app. That makes it a strong fit for restaurant knowledge assistants trained on SOPs, HR docs, vendor contracts, recipe specs, allergen files, and support content. Cached GitHub metadata shows 23.8k stars, MDX as the top GitHub language because of the docs-heavy repo, Apache-2.0 licensing, and an updated public org listing dated January 9, 2026.
+
+- **GitHub:** [github.com/deepset-ai/haystack](https://github.com/deepset-ai/haystack)
+- **Stars:** 23.8k ⭐
+- **Language:** MDX
+- **License:** Apache-2.0
+- **Last Commit:** Jan 9, 2026
+- **Category:** rag, question-answering, orchestration
+- **Best for:** internal restaurant knowledge assistants
+
+---
+
+#### [LangChain](https://github.com/langchain-ai/langchain)
+> **Description:** LangChain remains one of the most widely used open-source frameworks for building LLM applications with tools, memory, vector stores, and external integrations. The README now frames it around reliable agents and context-aware applications, with a broad integration surface across model providers and storage layers. Restaurants can use it for review summarization, reservation assistants, policy bots, or multi-step internal copilots. Cached GitHub metadata shows 122k stars, Python as the primary language, MIT licensing, and public release activity into December 2025.
+
+- **GitHub:** [github.com/langchain-ai/langchain](https://github.com/langchain-ai/langchain)
+- **Stars:** 122k ⭐
+- **Language:** Python
+- **License:** MIT
+- **Last Commit:** Dec 16, 2025
+- **Category:** llm-framework, agents, integrations
+- **Best for:** custom restaurant AI workflows and agent orchestration
+
+---
+
+#### [AnythingLLM](https://github.com/Mintplex-Labs/anything-llm)
+> **Description:** AnythingLLM is a full-stack self-hosted AI app with RAG, document workspaces, multi-user support, agent features, and broad LLM/vector-database compatibility. The README emphasizes turning any document or resource into usable context for chat, with private workspaces and local or remote hosting options. Restaurants can use it to build internal knowledge hubs for training manuals, recipes, allergen policies, vendor docs, and franchise operations. Cached GitHub metadata shows 53.3k stars, JavaScript as the primary language, MIT licensing, and a last visible update on January 14, 2026.
+
+- **GitHub:** [github.com/Mintplex-Labs/anything-llm](https://github.com/Mintplex-Labs/anything-llm)
+- **Stars:** 53.3k ⭐
+- **Language:** JavaScript
+- **License:** MIT
+- **Last Commit:** Jan 14, 2026
+- **Category:** rag, self-hosted, workspace-ai
+- **Best for:** private restaurant knowledge bases with chat
+
+---
+
+#### [Flowise](https://github.com/FlowiseAI/Flowise)
+> **Description:** Flowise is a visual builder for AI agents and LLM applications. Its README focuses on rapid setup, visual composition, self-hosting, and low-code workflows, which makes it useful for restaurant groups that want to prototype reservation flows, FAQ bots, review-monitoring agents, or internal assistants without building every pipeline directly in code. It is a builder rather than a turnkey restaurant app, but a powerful one. Cached GitHub metadata shows 47.8k stars, TypeScript as the primary language, Apache-2.0 licensing, and an updated org listing through December 5, 2025.
+
+- **GitHub:** [github.com/FlowiseAI/Flowise](https://github.com/FlowiseAI/Flowise)
+- **Stars:** 47.8k ⭐
+- **Language:** TypeScript
+- **License:** Apache-2.0
+- **Last Commit:** Dec 5, 2025
+- **Category:** low-code, agents, rag
+- **Best for:** visual prototyping of restaurant AI assistants
 
 ---
 
 ## FAQ
 
-### What are the best open source AI tools for restaurant phone ordering?
-For voice-first restaurant flows, start with `pipecat-ai/pipecat`, `livekit/agents`, `vocodedev/vocode-core`, and `RasaHQ/rasa`. They cover real-time audio, telephony-oriented orchestration, and structured dialogue logic better than generic chatbot repos.
+### What are the best open source AI tools for restaurants in 2026?
+For most teams, the strongest stack is a combination rather than one repo: `PaddleOCR` or `Marker` for menu ingestion, `Intervo` or `Asterisk-AI-Voice-Agent` for voice ordering, `NeuralForecast` or `Prophet` for demand planning, and `Qdrant` plus `Haystack` or `AnythingLLM` for knowledge assistants.
 
-### Which GitHub repositories help restaurants parse menus, invoices, and PDFs?
-`PaddlePaddle/PaddleOCR`, `datalab-to/marker`, `datalab-to/surya`, `datalab-to/chandra`, and `Unstructured-IO/unstructured` are the strongest fits in this list for restaurant document ingestion, especially when menus and forms need to become structured data.
+### Are there many restaurant-specific AI repositories on GitHub?
+No. That is the main gap this research exposed. There are only a handful of directly restaurant-native AI repos, so the rest of the list focuses on verified open-source AI building blocks that restaurants can realistically adapt.
 
-### Can restaurants self-host AI tools instead of buying SaaS?
-Yes. Most repositories in this list are explicitly designed for self-hosting or source-level customization. The biggest advantage is control over guest data, menu content, internal SOPs, and integration logic with POS, CRM, or scheduling systems.
+### Which GitHub tools are best for turning restaurant menus into structured data?
+Start with `PaddleOCR`, `docTR`, `surya`, `Marker`, and `MinerU`. If you specifically want menu prototypes, also review `ai-menu-generator` and `ocr-restaurant-menu-import`.
 
-### What open source AI projects are best for restaurant demand forecasting?
-`Nixtla/statsforecast`, `Nixtla/neuralforecast`, `Nixtla/mlforecast`, `unit8co/darts`, and `pycaret/pycaret` are the strongest options here. They are not restaurant-branded, but they are well suited to covers forecasting, labor planning, prep estimation, and anomaly detection.
+### What is the best open source AI stack for restaurant phone ordering?
+For self-hosted phone automation, `Asterisk-AI-Voice-Agent` is the most telephony-specific option in this list. `Intervo`, `Rhasspy`, `OVOS`, `WhisperSpeech`, and `openWakeWord` are strong supporting layers depending on whether you need call routing, offline intents, TTS, or wake-word triggers.
 
-### Are there open source recommendation engines for restaurant menu personalization?
-There are some solid building blocks, but this is the clearest gap in the market. `recommenders-team/recommenders`, `RUCAIBox/RecBole`, `tensorflow/recommenders`, and `benfred/implicit` are adaptable, but truly restaurant-specific open source recommenders are still limited on GitHub.
+### Which open source AI repos help restaurants forecast sales, labor, or inventory?
+`NeuralForecast`, `MLForecast`, `Darts`, `PyTorch Forecasting`, `Prophet`, and `Kats` are the most relevant repos here. They can all be applied to hourly sales, prep forecasting, labor scheduling, or store-level anomaly detection.
 
-### How should I evaluate a GitHub AI repo before using it in a restaurant stack?
-Check the license first, then recent activity, stars, issue velocity, documentation quality, self-hosting instructions, and whether the project supports your deployment model. For restaurant usage, also confirm it can work with sensitive guest data and structured outputs.
+### Which GitHub projects help restaurants build recommendation engines?
+`RecBole`, `implicit`, `LightFM`, `Surprise`, and `LensKit` are the strongest recommendation-specific repositories in this list. Use them for combos, upsells, “customers also ordered,” loyalty targeting, and personalized menu ranking.
+
+### Can restaurants build private ChatGPT-style assistants from GitHub repos only?
+Yes. `AnythingLLM`, `Haystack`, `LangChain`, `Flowise`, and `Qdrant` are enough to build private assistants over SOPs, recipes, allergen policies, vendor docs, and employee manuals without relying on a proprietary hosted front end.
 
 ## GitHub Search Queries Used
+The following `gh` queries reflect the discovery and broadening strategy used for this repo:
 
 ```bash
-gh search repos "restaurants ai" --limit 20
-gh search repos "restaurant chatbot" --limit 20
-gh search repos "restaurant voice ai" --limit 20
-gh search repos "menu OCR" --limit 20
-gh search repos "receipt OCR language:Python" --limit 20
-gh search repos "document parsing llm" --limit 20
-gh search repos "forecasting retail demand language:Python" --limit 20
-gh search repos "time series forecasting restaurant demand" --limit 20
-gh search repos "recommendation system implicit feedback language:Python" --limit 20
-gh search repos "open source ai agent framework" --limit 20
-gh search repos "self-hosted llm workflow builder" --limit 20
-gh search repos "voice ai agent open source" --limit 20
+gh search repos "restaurant ai" --limit 50 --json name,owner,url,description,stargazersCount,updatedAt,licenseInfo,primaryLanguage
+gh search repos "\"restaurant menu\" ai" --limit 50 --json name,owner,url,description,stargazersCount,updatedAt,licenseInfo,primaryLanguage
+gh search repos "\"menu OCR\" OR \"document OCR\" restaurant" --limit 50 --json name,owner,url,description,stargazersCount,updatedAt,licenseInfo,primaryLanguage
+gh search repos "\"voice agent\" restaurant OR telephony OR ordering" --limit 50 --json name,owner,url,description,stargazersCount,updatedAt,licenseInfo,primaryLanguage
+gh search repos "\"time series forecasting\" inventory OR demand OR retail" --limit 50 --json name,owner,url,description,stargazersCount,updatedAt,licenseInfo,primaryLanguage
+gh search repos "\"recommender system\" menu OR food OR retail" --limit 50 --json name,owner,url,description,stargazersCount,updatedAt,licenseInfo,primaryLanguage
+gh search repos "\"RAG\" self-hosted llm knowledge base" --limit 50 --json name,owner,url,description,stargazersCount,updatedAt,licenseInfo,primaryLanguage
+gh search repos "\"restaurant-menu\" --topic restaurant-menu" --limit 50 --json name,owner,url,description,stargazersCount,updatedAt,licenseInfo,primaryLanguage
 ```
 
 ## Contributing
+Contributions are welcome, but every submission must meet the repo rules:
 
-Contributions are welcome. Every submission must include a public `github.com` repository URL. No SaaS landing pages, cloud-only products, or closed-source tools will be accepted.
+- It must be a public GitHub repository URL.
+- It must be open source with a clearly visible license on GitHub.
+- It must be relevant to restaurant AI workflows or a clearly defensible restaurant use case.
+- It must not be a closed SaaS product listing.
+- It should include stars, primary language, license, last commit date, and a short explanation of the restaurant use case.
 
-For each new tool, include:
-
-- Repository name and GitHub URL
-- Short explanation of why it helps restaurants
-- Stars, primary language, license, and last commit date from GitHub
-- A note on the restaurant use case it serves
-
-Please read [CONTRIBUTING.md](./CONTRIBUTING.md) before opening a pull request.
+For full instructions, see [CONTRIBUTING.md](./CONTRIBUTING.md).
 
 ## License
-
 MIT License. See [LICENSE](./LICENSE).

@@ -4,40 +4,36 @@ Thanks for contributing to `awesome-best-ai-tools-for-restaurants-2026`.
 
 ## Submission Rules
 
-- Every submission must point to a public `github.com` repository.
-- No proprietary SaaS tools, cloud-only products, or marketing pages.
-- The repository must be relevant to restaurant workflows such as ordering, reservations, OCR, forecasting, support, personalization, or back-office automation.
-- If a tool is generic AI infrastructure, explain the restaurant use case clearly.
+- Every submission must include a public `github.com` repository URL.
+- Closed SaaS products are not accepted.
+- Repos must have a visible open-source license on GitHub.
+- Repos should be directly restaurant-specific or clearly useful for restaurant AI workflows such as menu OCR, voice ordering, forecasting, recommendation, review intelligence, or knowledge assistants.
+- If a category is thin, keep it thin. Do not pad categories with weakly related repos.
 
-## Required Data For Each Submission
+## What to Include
 
-Please include all of the following in your pull request:
+Please open a pull request with:
 
-- Tool name
-- GitHub repository URL
-- 2-4 sentence description based on the repository README
-- Stars count from GitHub
-- Primary language from GitHub
-- License from GitHub
-- Last commit date from GitHub
-- Category and best-fit restaurant use case
+- Repository name
+- GitHub URL
+- Short summary of what the tool does
+- Stars count
+- Primary language
+- License
+- Last commit date
+- Suggested category
+- Why it matters for restaurants
 
-## Quality Bar
+## Quality Standard
 
-- Prefer actively maintained repositories.
-- Prefer self-hostable or source-available workflows over hosted products.
-- Do not add duplicate repositories across multiple sections unless the fit is materially different.
-- If a category is thin, document the gap instead of forcing weak entries.
+- Prefer repositories with active maintenance.
+- Prefer descriptions grounded in the project README.
+- If GitHub metadata is ambiguous, note that clearly instead of guessing.
 
 ## Pull Request Checklist
 
-- Confirm the repo URL is valid and public.
-- Confirm the license is listed correctly.
-- Confirm the metadata is current when you submit.
-- Confirm the tool is not a proprietary SaaS listing.
-- Confirm the formatting matches the existing README structure.
-
-## Notes
-
-- Minor fixes and metadata updates are welcome.
-- If you are unsure whether a repo belongs, open an issue first with the GitHub URL and restaurant use case.
+- I included a public GitHub repository URL.
+- I verified the repo is open source.
+- I checked that the tool is not just a proprietary SaaS listing.
+- I added GitHub metadata and a restaurant-specific use case.
+- I did not duplicate an existing entry.
